@@ -5,11 +5,44 @@
 </head>
 <body>
   <script>
+    console.log(3 > 5 - 5);
+    console.log(5==='5.00');
+
+    if (false) 
+    {
+      console.log('this will never run');
+    }
+    else
+    {
+      console.log('this will always run');
+    }
+
+//Checking if a person can drive are not with their age.
     
+    age = 18
+    if (age >= 16)//{} are necessary for multiple statements.
+    {
+      console.log('You can drive.');
+      console.log('Congratulations!');
+    }
+    else          //{} are not necessary for single statements.
+      console.log('You cannot drive yet.');
 
 
 
-    console.log(3>5);
+    const age = 15
+    if (15 >= 16)
+    {
+      console.log('You can drive.');
+      console.log('Congratulations!');
+    }
+
+    else if (15 >= 14)
+      console.log('You can drive with a parent.');
+    else
+      console.log('You cannot drive yet.');
   </script>
 </body>
 </html>
+
+<!--{} are optional for single statements, but it's good practice to use them anyway-->
