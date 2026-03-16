@@ -5,6 +5,7 @@
 </head>
 <body>
   <script>
+    /*
     console.log(3 > 5 - 5);
     console.log(5==='5.00');
 
@@ -41,8 +42,67 @@
       console.log('You can drive with a parent.');
     else
       console.log('You cannot drive yet.');
+    
+    //Logical Operators
+    console.log(true && true); //true
+    console.log(true && false); //false
+    console.log(false && false); //false
+    console.log(true || true); //true
+    console.log(true || false); //true
+    console.log(false || false); //false
+    console.log(!true); //false
+    console.log(!false); //true
+    */
+
+    //Truthy and Falsy values
+    if (5)
+    {
+      console.log('This will run because 5 is a truthy value.');
+    }
+    if (0)
+    {
+      console.log('This will not run because 0 is a falsy value.');
+    }
+    if ('')
+    {
+      console.log('This will not run because an empty string is a falsy value.');
+    }
+    if (' ')
+    {
+      console.log('This will run because a string with a space is a truthy value.');
+    }
+    if (null)
+    {
+      console.log('This will not run because null is a falsy value.');
+    }
+    console.log(!0); //true
+    console.log('text'/5); //NaN, which is a falsy value.
+
+    cartQuantity = 5;
+    if (cartQuantity)
+    {
+      console.log('You have ' + cartQuantity + ' items in your cart.');
+    }
+    else
+    {
+      console.log('Your cart is empty.');
+    }
   </script>
 </body>
 </html>
 
-<!--{} are optional for single statements, but it's good practice to use them anyway-->
+<!--{} are optional for single statements, but it's good practice to use them anyway
+
+Falsy Values: false, 0, '', null, undefined, NaN(Not a Number)
+Truthy Values: all values that are not falsy, including true, non-zero numbers, non-empty strings, objects, arrays, etc.
+
+
+
+
+
+
+
+
+
+
+-->
