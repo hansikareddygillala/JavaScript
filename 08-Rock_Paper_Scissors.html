@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Rock Paper Scissors</title>
+</head>
+<body>
+  <p>Rock Paper Scissors</p>
+  <button onclick="
+    playGame('Rock');
+  ">Rock</button>
+
+
+  <button onclick="
+    playGame('Paper');
+  ">Paper</button>
+  
+  <button onclick="
+    playGame('Scissors');
+  ">Scissors</button>
+
+
+  <script>
+    function playGame(playerMove) {
+      const computerMove = pickComputerMove(); 
+      console.log(`Computer Move  is '${computerMove}'`);
+      Result = '';
+      if (playerMove === 'Scissors') {
+        if (computerMove === 'Rock') {
+          Result = 'You lose!';
+        } else if (computerMove === 'Paper') {
+          Result = 'You Win!';
+        } else if (computerMove === 'Scissors') {
+          Result = 'It\'s a tie!';
+        }
+      } else if (playerMove === 'Paper') {
+          if (computerMove === 'Rock') {
+        Result = 'You Win!';
+        } else if (computerMove === 'Paper') {
+          Result = 'It\'s a tie!';
+        } else if (computerMove === 'Scissors') {
+          Result = 'You lose!';
+        }
+      } else if (playerMove === 'Rock') {
+          if (computerMove === 'Rock') {
+        Result = 'It\'s a tie!';
+        } else if (computerMove === 'Paper') {
+          Result = 'You lose!';
+        } else if (computerMove === 'Scissors') {
+          Result = 'You Win!';
+        }
+      }
+      //For the pop up msg.
+      alert(`Your picked ${playerMove}. Computer picked ${computerMove}. ${Result}`);
+    }
+
+
+    function pickComputerMove() {
+      const random = Math.random();
+      let computerMove = '';
+      if (random>=0 && random < 1/3) {
+        computerMove = 'Rock';
+      } else if (random >= 1/3 && random < 2/3) {
+        computerMove = 'Paper';
+      } else if (random >= 2/3 && random < 1) {
+        computerMove = 'Scissors';
+      }
+      /*
+      return;//this will show undefined
+      console.log('after return statement,so this does not get executed');
+      */
+      return computerMove;
+    }
+  </script>
+</body>
+</html>
+
+<!--This is a simple rock paper scissors game.
+The user will click on one of the buttons and 
+the computer will randomly choose one of the three options.
+Then, the winner will be determined based on the rules of the game.
+
+Steps(Algorithm):
+1.Computer randomly selects a move
+2. Compare the user's move with the computer's move to get the result
+3. Display the result to the user
+
+How to generate a random move for the computer?
+We can use the Math.random() function to generate a random number between 0 and 1(in 0.somethingsomething)
+if between 0 and 1/3 ----- rock
+if between 1/3 and 2/3 --- paper
+if between 2/3 and 1 ----- scissors
+
+*Both the computerMove s are different because the both don't conflict with their scope
+Following the code line-by-line is called tracing the code.
+
+
+
+
+
+
+
+
+
+
+-->
