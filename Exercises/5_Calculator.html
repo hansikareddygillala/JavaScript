@@ -25,7 +25,10 @@
   <p>
     <button onclick="calc += '0';">0</button>
     <button onclick="calc += '.';">.</button>
-    <button onclick="calc += eval(calc); console.log(calc);">=</button>
+    <button onclick="
+      console.log(calc);
+      calc = eval(calc); 
+      console.log(calc);">=</button>
     <button onclick="calc += ' / ';">/</button>
   </p>
   <button onclick="calc = ''">Clear</button>
