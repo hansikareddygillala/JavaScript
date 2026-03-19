@@ -5,6 +5,7 @@
 </head>
 <body>
   <script>
+    /*
     function func1 () {
       console.log('hello');
       console.log(2+2);
@@ -12,6 +13,19 @@
 
     func1();
     func1();
+    */
+
+    //PARAMETERS IN FUNCTIONS.
+
+    function calculateTax(cost,taxPercent = 0.1) {//This function takes a parameter.
+      console.log(taxPercent);
+      console.log(cost * taxPercent);
+    }
+
+    //Calling the function.
+    calculateTax(2000, 0.2);//Passing a value into the function / argument.
+    calculateTax(5000);//Argument//We get undefines and NaN 
+    //we can even set a default value for the parameter.
   </script>
 </body>
 </html>
@@ -23,7 +37,7 @@ the keywoed 'function' --- creates a new function
 after that is the name of the function (func1)
 the parentheses () --- are used to call the function
 
-
+alert is a function
 
 
 
