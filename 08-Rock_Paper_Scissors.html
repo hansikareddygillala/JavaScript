@@ -9,7 +9,6 @@
     playGame('Rock');
   ">Rock</button>
 
-
   <button onclick="
     playGame('Paper');
   ">Paper</button>
@@ -18,8 +17,20 @@
     playGame('Scissors');
   ">Scissors</button>
 
+  <button onclick="
+    score.Win = 0;
+    score.Lose = 0;
+    score.Tie = 0;
+    alert('Score reset! Wins: 0, Losses: 0, Ties: 0');
+  ">Reset Score</button>
 
   <script>
+    const score = {
+      Win: 0,
+      Lose: 0,
+      Tie: 0
+    }
+
     function playGame(playerMove) {
       const computerMove = pickComputerMove(); 
       console.log(`Computer Move  is '${computerMove}'`);
@@ -49,8 +60,18 @@
           Result = 'You Win!';
         }
       }
+
+      if (Result === 'You Win!') {
+        score.Win++;
+      } else if (Result === 'You lose!') {
+        score.Lose++;
+      } else if (Result === 'It\'s a tie!') {
+        score.Tie++;
+      }
+
       //For the pop up msg.
-      alert(`Your picked ${playerMove}. Computer picked ${computerMove}. ${Result}`);
+      alert(`Your picked ${playerMove}. Computer picked ${computerMove}. ${Result}
+Wins: ${score.Win}, Losses: ${score.Lose}, Ties: ${score.Tie}`);
     }
 
 
