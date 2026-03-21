@@ -29,7 +29,33 @@
     console.log(product);
     */
 
-    const product2
+    const product2 = {
+      name: 'shirt',
+      ['delivery-time']: '2 days',
+      //'arrival-date': '2026-03-20',
+      rate: {
+        stars: 4.5,
+        count:87
+      },
+      fun: function func1() {
+        console.log('This is a function inside an object');
+      }
+    };
+    console.log(product2);
+    console.log(product2.name);
+    console.log(product2['name']);//same as above but using bracket notation
+    console.log(product2['delivery-time']);//- is a problem math subtractiona nd english hyphen so we have to use bracket notation.
+    console.log(product2.rate.count);
+    product2.fun()
+
+    console.log(typeof console.log);
+    console.log(typeof Math.random())
+
+    console.log(JSON.stringify(product2));//converting object to string
+    const jsonString = JSON.stringify(product2);
+    console.log(JSON.parse(jsonString));//converting string back to object
+
+
   </script>
 </body>
 </html>
@@ -38,6 +64,11 @@
 <!--
 left side is called property
 right side is called value
+-->
 
-
+<!--
+JSON - JavaScript Object Notation
+1) All the strings must be in double quotes,singles quotes do not work here.
+2) No functions allowed
+    because JSON is a universal and javascript is not the only language, so it cannot understand functions.
 -->
