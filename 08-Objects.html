@@ -27,7 +27,7 @@
 
     delete product.newprop;//deleting a property
     console.log(product);
-    */
+    
 
     const product2 = {
       name: 'shirt',
@@ -54,6 +54,56 @@
     console.log(JSON.stringify(product2));//converting object to string
     const jsonString = JSON.stringify(product2);
     console.log(JSON.parse(jsonString));//converting string back to object
+    
+    */
+    
+    //AUTO-BOXING
+    console.log('hello'.length);//5
+    console.log('hello'.toUpperCase());//HELLO
+    console.log('hello'.toLowerCase());//hello
+
+    const obj1 = {//This is just a reference so even though it is const we can still che=ange the value of the props or the obj
+      message: 'hello'
+    }
+    const obj2 = obj1;//copy by refernece.
+    obj1.message = 'hi';
+    console.log(obj1.message);//hi
+    console.log(obj2.message);//hi  // here even the obj2 has changed
+
+    const obj3 = {
+      message: 'hi',
+      price: 799
+    }
+
+    console.log(obj1 === obj2);//true
+    console.log(obj1 === obj3);//false
+    //obj1 and obj2 are the same object in memory but obj3 is a different object in memory even though it has the same content as obj1 and obj2.
+
+    const obj4 = {
+      message: 'hi'
+    }
+    //message = obj4.message;
+    //or the same thing can be represented as
+    const {message} = obj4;//destructuring
+    console.log(message);//hi
+
+    const obj5 = {
+      //message: message
+      //or 
+      message,//this is the same as above because of the shorthand property name
+      /*
+      method: function function1() {
+        console.log('This is a method inside an object');
+      }
+      */
+      method() {
+        console.log('This is a method inside an object');
+      }
+    }
+    console.log(obj5);//{message: 'hi'}
+    obj5.method;//This is a method inside an object
+
+
 
 
   </script>
