@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <button onclick="printChoice('Heads')">Heads</button>
+  <button onclick="printChoice('Tails')">Tails</button>
+  <p class="js-result"></p>
+  <script>
+    let choice;
+    function printChoice(choice) {
+      document.querySelector('.js-result').innerHTML = `You chose: ${choice}`;
+    }
+  </script>
+</body>
+</html>
