@@ -1,0 +1,42 @@
+.gaming-toggle-on {
+  font-family: Arial;
+  font-size: 16px;
+  padding: 10px 20px;
+  background-color: black;
+  color: white;
+  border:none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.gaming-toggle-off {
+  background-color: rgb(199, 199, 199);
+  color: black;
+}
+.music-toggle-on {
+  font-family: Arial;
+  font-size: 16px;
+  padding: 10px 20px;
+  background-color: black;
+  color: white;
+  border:none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.music-toggle-off {
+  background-color: rgb(199, 199, 199);
+  color: black;
+}
+.tech-toggle-on {
+  font-family: Arial;
+  font-size: 16px;
+  padding: 10px 20px;
+  background-color: black;
+  color: white;
+  border:none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.tech-toggle-off {
+  background-color: rgb(199, 199, 199);
+  color: black;
+}
