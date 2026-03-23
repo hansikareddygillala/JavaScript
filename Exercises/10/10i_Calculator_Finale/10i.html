@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Calculator</title>
+  <link rel="stylesheet" href="10i.css">
+</head>
+<body>
+  <p class="js-calc-display">hi</p>
+  <p>
+    <button class="num-button" onclick="updateCalc('1');">1</button>
+    <button class="num-button" onclick="updateCalc('2');">2</button>
+    <button class="num-button" onclick="updateCalc('3');">3</button>
+    <button class="calc-button" onclick="updateCalc(' + ');">+</button>
+  </p>
+  <p>
+    <button class="num-button" onclick="updateCalc('4');">4</button>
+    <button class="num-button" onclick="updateCalc('5');">5</button>
+    <button class="num-button" onclick="updateCalc('6');">6</button>
+    <button class="calc-button" onclick="updateCalc(' - ');">-</button>
+  </p>
+  <p>
+    <button class="num-button" onclick="updateCalc('7');">7</button>
+    <button class="num-button" onclick="updateCalc('8');">8</button>
+    <button class="num-button" onclick="updateCalc('9');">9</button>
+    <button class="calc-button" onclick="updateCalc(' * ');">*</button>
+  </p>
+  <p>
+    <button class="num-button" onclick="updateCalc('0');">0</button>
+    <button class="num-button" onclick="updateCalc('.');">.</button>
+    <button class="num-button" onclick="
+      calc = eval(calc);
+      //localStorage.setItem('calc', calc);
+      displayCalc(calc);
+      ";>=</button>
+    <button class="calc-button" onclick="updateCalc(' / ');">/</button>
+  </p>
+  <button class="calc-button" onclick="calc = ''; displayCalc(calc);">Clear</button>
+
+  <script src="10i.js"></script>
+</body>
+</html>
