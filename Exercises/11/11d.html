@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    for(let i = 0 ; i <= 10 ; i += 2) {
+      console.log(i);
+    }
+
+    for(let i = 5 ; i >=0 ; i--) {
+      console.log(i);
+    }
+
+    let i = 0;
+    while(i <= 10) {
+      console.log(i);
+      i += 2;
+    }
+    let j = 5;
+    while(j >= 0) {
+      console.log(j);
+      j--;
+    }
+
+    arr = [1,2,3,4,5];
+    function addOne(array) {
+      for(let i=0;i<array.length;i++) {
+        array[i] += 1;
+      }
+      return array;
+    }
+
+    console.log(addOne(arr));
+    console.log(addOne([-2,-1,0,99]));
+
+    function addNum(array, num) {
+      for(let i=0;i<array.length;i++) {
+        array[i] += num;
+      }
+      return array;
+    }
+    console.log(addNum([1,2,3,4,5], 10));
+    console.log(addNum(arr, 10));
+    console.log(addNum([-2,-1,0,99], -5));
+
+    function addARR(array1, array2) {
+      let result = [];
+      for(let i=0;i<array1.length;i++) {
+        result[i] = array1[i] + array2[i];
+      }
+      return result;
+    }
+    console.log(addARR([1,2,3,4,5], [6,7,8,9,10]));
+    console.log(addARR([1,2,3,4], [6,7,8,9,10]));
+    console.log(addARR([1,2,3,4,5], [6,7,8,9]));
+
+    function countPositive(array) {
+      let count = 0;
+      for(let i=0;i<array.length;i++) {
+        if(array[i] > 0) {
+          count++;
+        }
+      }
+      return count;
+    }
+    console.log(countPositive([1, -2, 3, -4, 5]));
+    console.log(countPositive([-1, -2, -3, -4, -5]));
+    console.log(countPositive([1, 2, 3, 4, 5]));
+
+
+    function minMax(array) {
+      let min = array[0];
+      let max = array[0];
+      for(let i=1;i<array.length;i++) {
+        if(array[i] < min) {
+          min = array[i];
+        }
+        if(array[i] > max) {
+          max = array[i];
+        }
+      }
+      return `Min: ${min}, Max: ${max}`;
+    }
+    console.log(minMax([1, 2, 3, 4, 5]));
+    console.log(minMax([-1, -2, -3, -4, -5]));
+    console.log(minMax([]));
+    console.log(minMax([3]));
+
+    function countWords(words) {
+    const result = {};//object not array got confused here object contains keys and values here apple is key and 1/2/3 is value if apple is there it will add +1 to key if not it will add the apple as value.
+
+    for (let i = 0; i < words.length; i++) {
+      const word = words[i];
+
+      if (result[word]) {
+        result[word] += 1;
+      } else {
+        result[word] = 1;
+      }
+    }
+
+    return result;
+    }
+    console.log(countWords(['apple', 'banana', 'apple', 'orange', 'banana', 'apple']));
+  </script>
+</body>
+</html>
