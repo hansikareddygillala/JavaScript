@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    foods = ['egg','apple','egg','egg','ham']
+    function removeEgg(foods) {
+      const foodsNoEgg = [];
+      for(let i = 0 ; i < foods.length ; i++) {
+        if(foods[i] !== 'egg') {
+          foodsNoEgg.push(foods[i]);
+        }
+      }
+      console.log(foodsNoEgg);
+    }
+
+    removeEgg(foods);
+
+    function removeEgg2(foods) {
+      for(let i = foods.length ; i >= 0 ; i--) {
+        if (foods[i] === 'egg') {
+          foods.splice(i,1)
+        }
+      }
+      console.log(foods)
+    }
+
+    removeEgg2(foods);
+  </script>
+</body>
+</html>

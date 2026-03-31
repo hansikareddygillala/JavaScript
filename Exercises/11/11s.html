@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    foods = ['egg','apple','egg','egg','ham']
+
+
+    function removeEgg2(foods) {
+      let eggCounter = 0;
+      for(let i = foods.length -1 ; i >= 0 ; i--) {
+        if (foods[i] === 'egg' && eggCounter <2) {
+          foods.splice(i,1)
+          eggCounter++;
+        }
+      }
+      console.log(foods)
+    }
+
+    removeEgg2(foods);
+
+    //removing first 2 eggs from the array, but keeping the original array unchanged
+    
+    function removeEgg3(foods) {
+      let eggCounter1 = 0;
+      const reverse = foods.reverse();
+      for(let i = reverse.length -1 ; i >= 0 ; i--) {
+        if (reverse[i] === 'egg' && eggCounter1 <2) {
+          reverse.splice(i,1)
+          eggCounter1++;
+        }
+      }
+      return reverse.reverse();
+    }
+
+    console.log(removeEgg3(foods));
+
+    
+  </script>
+</body>
+</html>

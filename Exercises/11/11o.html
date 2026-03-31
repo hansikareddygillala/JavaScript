@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    arr = ['hello','world','search','good','search'];
+    foundAt = -1;
+    for (let i = 0; i < arr.length; i++) {
+      if(arr[i] === 'search') {
+        foundAt = i;
+        break;
+      }
+    }
+    console.log(foundAt);
+
+    function findIndex(array,word) {
+      foundAt = -1;
+      for (let i = 0; i < array.length; i++) {
+        if(array[i] === word) {
+          foundAt = i;
+          break;
+        }
+      }
+      console.log(foundAt);
+    }
+    findIndex(arr,'search');
+    findIndex(['green','red','blue','red'],'red');
+    findIndex(['green','red','blue','red'],'yellow');
+
+    foods = ['egg','apple','egg','egg','ham']
+    function removeEgg(foods) {
+      foodsNoEgg = [];
+      for(let i = 0 ; i < foods.length ; i++) {
+        if(foods[i] !== 'egg') {
+          foodsNoEgg.push(foods[i]);
+        }
+      }
+      console.log(foodsNoEgg);
+    }
+
+    removeEgg(foods);
+
+    function removeEgg2(foods) {
+      for(let i = foods.length ; i >= 0 ; i++) {
+        if (foods[i] === 'egg') {
+          foods.splice(i,1)
+        }
+      }
+    }
+
+    removeEgg2(foods);
+  </script>
+</body>
+</html>
