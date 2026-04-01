@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Advanced Functions</title>
+</head>
+  <body>
+    <script>
+      /*
+
+      //call a function before it is declared
+      greeting();
+      function greeting() {
+        console.log('hello');
+      }
+
+      greeting();
+
+      const num = 2;
+      const function1 = function greeting() {
+        console.log('hello2');
+      }
+
+      console.log(function1);
+      console.log(typeof function1);
+      function1();
+
+      //anonymous function
+      const function2 = function() {
+        console.log('anonymous func');
+      }
+
+      const object1 = {
+        num: 2,
+        func: function greeting() {
+          console.log('hello3');
+        }
+      };
+
+      object1.func();
+
+      function display(param) {
+        console.log(param);
+      }
+
+      display(2);
+
+      function run(param) {
+        param();//callback function
+      }
+      run(function() {
+        console.log('hello4');
+      });
+
+      */
+      setTimeout(function() {
+        console.log('timeout');
+        console.log('timeout2');
+      }, 3000);
+      //will call the function after certain amount of time (in milliseconds)
+      /*
+      setTimeout(console.log('timeout2'), 3000);
+      //will call the function immediately and pass the return value to setTimeout, which is not what we want
+      */
+      console.log('nextline');//it wont wait for the timeout to finish, it will execute the next line immediately (Asynchronous Code)
+
+
+      setInterval(function() {
+        console.log('interval');
+        console.log('interval2');
+      }, 100000);
+      //will call the function repeatedly with a certain interval (in milliseconds)
+      console.log('next line 2')
+
+
+
+
+
+
+
+
+
+    </script>
+  </body>
+</html>
+<!--
+Functions are values
+Whatever we can do in values, we can also do with functions -->
