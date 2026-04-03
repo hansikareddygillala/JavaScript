@@ -10,7 +10,12 @@
     let messages = 2
     let intervalId = setInterval(function() {
       if(messages > 0) {
-      document.title = `(${messages}) New Messages`;
+        setTimeout(function() {
+          document.title = `(${messages}) New Messages`;
+        }, 500);
+        setTimeout(function() {
+          document.title = "Apps";
+        }, 1000);
       } else {
         document.title = "Apps";
       }
