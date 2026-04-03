@@ -51,16 +51,16 @@
         console.log('hello4');
       });
 
-      */
+      
       setTimeout(function() {
         console.log('timeout');
         console.log('timeout2');
       }, 3000);
       //will call the function after certain amount of time (in milliseconds)
-      /*
-      setTimeout(console.log('timeout2'), 3000);
-      //will call the function immediately and pass the return value to setTimeout, which is not what we want
-      */
+      
+      //        setTimeout(console.log('timeout2'), 3000);
+      //      //will call the function immediately and pass the return value to setTimeout, which is not what we want
+      
       console.log('nextline');//it wont wait for the timeout to finish, it will execute the next line immediately (Asynchronous Code)
 
 
@@ -70,6 +70,19 @@
       }, 100000);
       //will call the function repeatedly with a certain interval (in milliseconds)
       console.log('next line 2')
+
+      */
+
+      //Another method to loop through array
+      //forEach method
+      [
+        'make dinner',
+        'wash dishes',
+        'watch youtube'
+      ].forEach(function(value, index) {
+        console.log(index);
+        console.log(value);
+      });
 
 
 
