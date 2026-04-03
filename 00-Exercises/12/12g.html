@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Message</title>
+</head>
+<body>
+  <button onclick="messages++">Add</button>
+  <button onclick="msgRemove()">Remove</button>
+  <script>
+    let messages = 2
+    let intervalId = setInterval(function() {
+      if(messages > 0) {
+      document.title = `(${messages}) New Messages`;
+      } else {
+        document.title = "Apps";
+      }
+      if(messages === 0) {
+        clearInterval(intervalId);
+      }
+    }, 1000);
+
+    function msgRemove() {
+      if (messages > 0) {
+        messages--;
+      } else {
+        document.title = "Apps";
+      }
+    }
+  </script>
+</body>
+</html>
