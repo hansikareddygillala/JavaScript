@@ -1,0 +1,124 @@
+<!--<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Minimal Ludo</title>
+	<style>
+		:root{--size:480px}
+		body{font-family:arial;display:flex;align-items:center;justify-content:center;height:100vh;margin:0;background:#f0f0f0}
+		.board{width:var(--size);height:var(--size);background:#fff;display:grid;grid-template-columns:repeat(15,1fr);grid-template-rows:repeat(15,1fr);box-shadow:0 6px 18px rgba(0,0,0,.15)}
+		.cell{border:1px solid #ddd;box-sizing:border-box}
+		/* home areas */
+		.home-red{background:#ffd6d6}
+		.home-green{background:#d6ffd6}
+		.home-yellow{background:#fff3d6}
+		.home-blue{background:#d6e7ff}
+		.center{grid-column:6/11;grid-row:6/11;background:#eee;display:flex;align-items:center;justify-content:center}
+		.controls{position:absolute;top:10px;left:10px}
+		.panel{position:fixed;right:10px;top:10px;background:#fff;padding:10px;border-radius:6px;box-shadow:0 6px 18px rgba(0,0,0,.12)}
+		.tokens{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#333;font-weight:700}
+		.red{background:#ff6b6b}
+		.green{background:#3ddc84}
+		.yellow{background:#ffbe4a}
+		.blue{background:#4aa3ff}
+		button{padding:8px 12px;margin:4px}
+	</style>
+</head>
+<body>
+	<div class="board" id="board"></div>
+	<div class="panel">
+		<div>Player: <span id="player">Red</span></div>
+		<div>Dice: <span id="dice">-</span></div>
+		<button id="roll">Roll</button>
+		<div id="log" style="margin-top:8px;font-size:13px"></div>
+	</div>
+
+	<script>
+	// Minimal playable Ludo-like implementation for one token per player
+	const board = document.getElementById('board');
+	const playerLabel = document.getElementById('player');
+	const diceLabel = document.getElementById('dice');
+	const rollBtn = document.getElementById('roll');
+	const log = document.getElementById('log');
+
+	// Create 15x15 cells
+	const cells = [];
+	for(let r=0;r<15;r++){
+		for(let c=0;c<15;c++){
+			const div=document.createElement('div');div.className='cell';div.dataset.r=r;div.dataset.c=c;board.appendChild(div);cells.push(div);
+		}
+	}
+
+	// Define simple start positions for four players (single token each)
+	const players = [
+		{name:'Red',color:'red',pos:-1,start:1},
+		{name:'Green',color:'green',pos:-1,start:14},
+		{name:'Yellow',color:'yellow',pos:-1,start:29},
+		{name:'Blue',color:'blue',pos:-1,start:42}
+	];
+
+	// path: simplified around board using 52 steps
+	const path=[];
+	// build a perimeter path (clockwise) using approximate cell coordinates
+	const coords = [];
+	// top row left->right (3..11)
+	for(let c=3;c<=11;c++) coords.push([3,c]);
+	// right column top->bottom (4..11)
+	for(let r=4;r<=11;r++) coords.push([r,11]);
+	// bottom row right->left (10..3)
+	for(let c=10;c>=3;c--) coords.push([11,c]);
+	// left column bottom->top (10..4)
+	for(let r=10;r>=4;r--) coords.push([r,3]);
+	coords.forEach(([r,c])=>{ path.push(r*15+c); });
+
+	// place player tokens in their homes
+	players.forEach((p,i)=>{
+		const token=document.createElement('div');token.className='tokens '+p.color;token.textContent='P';token.dataset.player=i;
+		const homeIndex = [0,14*15+14,14*15,14].map((v,idx)=>v)[i]; // just distinct spots (not used visually)
+		// append to center area for visual simplicity
+		document.querySelector('.center').appendChild(token);
+		p.el=token;
+	});
+
+	// Render center area: replace center cells
+	const center = document.querySelector('.center');
+	center.innerHTML='';
+
+	let turn=0;
+	function setLog(s){ log.textContent=s }
+	function updateUI(){ playerLabel.textContent=players[turn].name; }
+
+	function movePlayer(pIndex, steps){
+		const p=players[pIndex];
+		if(p.pos===-1){ // at home
+			if(steps===6){ p.pos = players[pIndex].start; } else return false;
+		} else {
+			p.pos = (p.pos + steps) % path.length;
+		}
+		// position token element to cell
+		const cell = cells[path[p.pos]];
+		cell.innerHTML=''; cell.appendChild(p.el);
+		return true;
+	}
+
+	rollBtn.onclick = ()=>{
+		const d = Math.floor(Math.random()*6)+1; diceLabel.textContent=d;
+		const moved = movePlayer(turn,d);
+		setLog(moved? players[turn].name+' moved': players[turn].name+' cannot move');
+		if(d!==6 || !moved) turn = (turn+1)%4; // basic turn rule
+		updateUI();
+	}
+
+	// initialize center area and simple markings
+	function init(){
+		// mark path cells
+		path.forEach((idx,i)=>{ cells[idx].style.background=(i%13===0)?'#f7f7f7':'#fff' });
+		// create visible center
+		const cent=document.createElement('div');cent.style.gridColumn='6/11';cent.style.gridRow='6/11';cent.style.display='flex';cent.style.alignItems='center';cent.style.justifyContent='center';cent.textContent='LUDO';cent.style.fontWeight='700';cent.style.color='#666';board.appendChild(cent);
+		updateUI();
+	}
+	init();
+	</script>
+</body>
+</html>
+-->
